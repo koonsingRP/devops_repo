@@ -7,4 +7,4 @@ puppet resource file /testdir ensure=directory
 puppet resource file /testdir/clone ensure=directory
 cd /testdir/clone
 git clone https://koonsingRP@github.com/devops_repo/devops_repo.git
-cp -p /testdir/clone/devops_repo/index.html /var/www/html
+cp -p /devops_repo/index.html /var/www/html
