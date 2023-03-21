@@ -21,6 +21,8 @@ pipeline {
                  sh '''#!/bin/bash
                  targets=puppetclient1;
                  pwd
+                 cd /testdir/clone;
+                 git clone https://github.com/koonsingRP/devops_repo.git
                  locate_script='script_to_run';
                  bolt script run $locate_script -t $targets -u clientadm -p user123 --no-host-key-check --run-as root;
                  '''
@@ -42,6 +44,9 @@ pipeline {
           steps {
                  sh '''#!/bin/bash
                  targets=puppetclient2;
+                 cd /testdir/clone;
+                 git clone https://github.com/koonsingRP/devops_repo.git
+              
                  locate_script='script_to_run';
                  bolt script run $locate_script -t $targets -u clientadm -p user123 --no-host-key-check --run-as root;
                  '''
