@@ -20,6 +20,7 @@ pipeline {
           steps {
                  sh '''#!/bin/bash
                  targets=puppetclient1;
+                 pwd
                  locate_script='/devops_repo/script_to_run';
                  bolt script run $locate_script -t $targets -u clientadm -p user123 --no-host-key-check --run-as root;
                  '''
